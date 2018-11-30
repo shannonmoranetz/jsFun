@@ -80,6 +80,7 @@ const context = {
 
     // Annotation: 
     // Function inside function -- 'no this'
+    // 
   },
 
   exerciseE() {
