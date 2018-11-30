@@ -16,11 +16,13 @@ const context = {
 
 
     // What is the value of `this` when we call ship.fly()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // When ship.fly() is called using the newly created instance of SpaceProbe, the result of the fly variable (line 3) is assigned to the property fly (line 11). 
+    // Because the invoked fly function is declared using ES6 syntax, its context is bound when the arrow function is declared. 
+    // Therefore, 'this' will refer to the window object because the const fly is created before and outside of the context of the SpaceProbe object. 
   },
 
   exerciseB() {
@@ -30,30 +32,32 @@ const context = {
     }
     
     // What is the value of `this` when we call fn()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // When the function fn() is invoked, its context is bound upon execution (ES5 syntax). 
+    // When considering dot notation, there is no object in front of 'this'. 
+    // Therefore, 'this' refers to the global window object, which is it's default value (rule #1).
   },
 
   exerciseC() {
     const car = {
       make: 'Tesla',
-      getInfo: function(){
-        console.log(this);
+      getInfo: function(){ 
+        console.log(this); 
       }
     };
 
     const el = document.getElementById('btn');
-    el.addEventListener('click', car.getInfo);
+    el.addEventListener('click', car.getInfo); 
 
     // What is the value of `this` when a user clicks on our element and car.getInfo() is triggered?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'el';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // The event listener for car.getInfo is run UPON the el object because, according to rule #2 of context, this will refer to the object to the left of the dot in dot notation.
   },
 
   exerciseD() {
@@ -70,11 +74,11 @@ const context = {
 
 
     // What is the value of `this` when we call dog.getBreed()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object'
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // Function inside function -- 'no this'
   },
 
   exerciseE() {
@@ -86,7 +90,9 @@ const context = {
 
 
     // What is the value of `this` when we call fn()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    // "what would you replace 'this' with"? 
+
+    const result = 'global window object';
     return result;
 
     // Annotation: 
@@ -109,11 +115,11 @@ const context = {
     const storm = new Hero('Ororo', 'weather control', true);
 
     // What is the value of `this` when we call storm.identifyHero()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'instance of Hero';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // Rule 3
   },
 
   exerciseG() {
@@ -137,11 +143,12 @@ const context = {
 
 
     // What is the value of `this` when we call monopoly.restart()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // arrowfunction calls an anonymous function. its a nested function, loses its context. defaults to window.
+
   },
 
   exerciseH() {
@@ -157,11 +164,11 @@ const context = {
     obj.method();
 
     // What is the value of `this` when we call obj.arrowFunction()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'obj';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // rules 2. es6 doesnt have a 'this', this is returned and replaces the arrowFunction property
   },
 
   exerciseI() {  
@@ -180,11 +187,11 @@ const context = {
     }, poets);
 
     // What is the value of `this` that gets returned on each iteration of poets.map()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'poets';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment. Annotation should include explanation regarding the second argument of `poets` that is being passed
+    // if you pass poets as the second argument of an iterator, it will bind this
   },
 
   exerciseJ() {
@@ -194,7 +201,7 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'el';
     return result;
 
     // Annotation: 
