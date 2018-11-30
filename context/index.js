@@ -58,6 +58,7 @@ const context = {
 
     // Annotation: 
     // The event listener for car.getInfo is run UPON the el object because, according to rule #2 of context, this will refer to the object to the left of the dot in dot notation.
+    // The object to the left of the event listener is 'el'.
   },
 
   exerciseD() {
