@@ -4,7 +4,7 @@
 
 * * *
 
-### Exercise test suite for advanced Javascript concepts. Turing Mod 2 introductory project.
+### Exercise test suite for advanced Javascript concepts.
 
 ### Features
 
